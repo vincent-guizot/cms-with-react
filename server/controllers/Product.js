@@ -2,7 +2,6 @@ const { Product,User } = require('../models')
 
 class ProductController {
     static allList(req,res){
-        //Menerima dr middleware
         Product.findAll()
         .then(Product => {
             res.status(200).json(Product)
@@ -120,10 +119,6 @@ class ProductController {
         })
     }
 }
-
-
-
-
 module.exports = ProductController
 
 /**
