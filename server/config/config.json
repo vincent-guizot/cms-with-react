@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "admin",
-    "database": "cms_dev",
+    "username": "root",
+    "password": null,
+    "database": "database_development",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "test": {
-    "username": "postgres",
-    "password": "admin",
-    "database": "cms_test",
+    "username": "root",
+    "password": null,
+    "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "production": {
-    "username": "xvsauczsbfwrra",
-    "password": "2b80eec1a5fad18367176b8f3702f214d47237754359309e4ea6d5b4e4785cfb",
-    "database": "dfrdquqa5sno0e",
-    "host": "ec2-3-223-21-106.compute-1.amazonaws.com",
-    "dialect": "postgres"
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }
