@@ -1,5 +1,5 @@
 {
-  "development": {
+  "development": {     
     "username": "postgres",
     "password": "admin",
     "database": "cms_dev",
