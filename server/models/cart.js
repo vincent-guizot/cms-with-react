@@ -46,21 +46,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    price: {
-      type: DataTypes.INTEGER,
-      validate : {
-        notEmpty : {
-          message : "Price must be filled! :)"
-        },
-        isInt : {
-          message : "Price must be Number"
-        },
-        min : {
-          args : 1,
-          message : "Price must more than 1"
-        }
-      }
-    },
   }, {
     sequelize,
     modelName: 'Cart',

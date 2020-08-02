@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       }
     },
-    price: {
+    total: {
       type: DataTypes.INTEGER,
       validate : {
         notEmpty : {

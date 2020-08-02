@@ -14,7 +14,7 @@ module.exports = {
       CustomerId: {
         type: Sequelize.INTEGER,
       },
-      price: {
+      total: {
         type: Sequelize.INTEGER
       },
       ShipperId : {
