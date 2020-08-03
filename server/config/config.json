@@ -1,29 +1,17 @@
 {
-  "development": {
-<<<<<<< HEAD
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-=======
+  "development": {     
     "username": "postgres",
     "password": "admin",
     "database": "cms_dev",
->>>>>>> 184766b9bae9de68e973a218bbfea5f0f10443fa
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
-<<<<<<< HEAD
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-=======
     "username": "postgres",
     "password": "admin",
     "database": "cms_test",
->>>>>>> 184766b9bae9de68e973a218bbfea5f0f10443fa
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
     "username": "root",
