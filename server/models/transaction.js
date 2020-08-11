@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       Transaction.belongsTo(models.Cart)
       Transaction.belongsTo(models.Customer)
       Transaction.hasOne(models.Shipper)
+      Transaction.belongsTo(models.Invoice)
     }
   };
   Transaction.init({
@@ -33,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       }
     },
-    total: {
+    subtotal: {
       type: DataTypes.INTEGER,
       validate : {
         notEmpty : {
@@ -50,7 +51,15 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     status : {
-      type : DataTypes.STRING
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          message : "Status is required!"
+        }
+      }
+    },
+    InvoiceId : {
+      type : DataTypes.INTEGER
     }
   }, {
     sequelize,
