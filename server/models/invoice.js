@@ -31,6 +31,14 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    CustomerId : {
+      type : DataTypes.INTEGER,
+      validate : {
+        notEmpty : {
+          message : "CustomerId is required!"
+        }
+      }
+    },
   }, {
     sequelize,
     modelName: 'Invoice',
