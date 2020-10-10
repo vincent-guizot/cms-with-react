@@ -11,74 +11,63 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Product.belongsTo(models.User)
-      Product.belongsToMany(models.Customer, {through: models.Cart})
+      Product.belongsTo(models.User);
     }
   };
   Product.init({
     name: {
-      type: DataTypes.STRING,
-      validate: {
-        notEmpty: {
-          message: "Username must be filled! :)"
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : "Product name must be filled ."
         }
       }
     },
-    category: {
-      type: DataTypes.STRING,
-      validate: {
-        notEmpty: {
-          message: "Category must be filled! :)"
-        }
-      }
-    },
-    price: {
-      type: DataTypes.INTEGER,
-      validate: {
-        notEmpty: {
-          message: "Price must be filled! :)"
-        },
-        isInt : {
-          message : "Price must be Number!"
-        },
-        min : {
-          args : 1,
-          message : "Price must more than 1"
-        }
-      }
-    },
-    stock: {
-      type: DataTypes.INTEGER,
-      validate: {
-        notEmpty: {
-          message: "Stock must be filled! :)"
-        },
-        isInt : {
-          message : "Stock must be Number!"
-        },
-        min : {
-          args : 1,
-          message : "Stock must more than 1"
+    info: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : "Product info must be filled ."
         }
       }
     },
     image: {
-      type: DataTypes.STRING,
-      validate: {
-        notEmpty: {
-          message: "Image must be filled! :)"
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : "Product image must be filled ."
+        },
+        // isUrl : {
+        //   msg : "Product image must be URL format thanks."
+        // }
+      }
+    },
+    price: {
+      type : DataTypes.INTEGER,
+      validate : {
+        notEmpty : {
+          msg : "Product price must be filled ."
+        },
+        isNumeric : {
+          msg : "Price must be a number."
         }
       }
     },
-    UserId : {
-      type: DataTypes.INTEGER
-    }
+    stock: {
+      type : DataTypes.INTEGER,
+      validate : {
+        notEmpty : {
+          msg : "Product stock must be filled ."
+        },
+        isNumeric : {
+          msg : "Stock must be a number."
+        }
+      }
+    },
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Product',
   });
-  Product.beforeCreate((user) => {
-
-  })
   return Product;
 };

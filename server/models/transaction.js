@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Transaction.init({
-    CartId: {
+    ProductId: {
       type: DataTypes.INTEGER,
       validate : {
         notEmpty : {
@@ -31,6 +31,14 @@ module.exports = (sequelize, DataTypes) => {
       validate : {
         notEmpty : {
           message : "CustomerId must be filled! :)"
+        },
+      }
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+      validate : {
+        notEmpty : {
+          message : "Quantity must be filled! :)"
         },
       }
     },
@@ -48,14 +56,6 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty : {
           message : "ShipperId must be filled! :)"
         },
-      }
-    },
-    status : {
-      type : DataTypes.STRING,
-      validate : {
-        notEmpty : {
-          message : "Status is required!"
-        }
       }
     },
     InvoiceId : {
