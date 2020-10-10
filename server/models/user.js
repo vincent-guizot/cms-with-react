@@ -1,4 +1,6 @@
 'use strict';
+const {encryptPwd} = require('../helpers/bcrypt')
+
 const {
   Model
 } = require('sequelize');
@@ -11,44 +13,37 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasMany(models.Product)
+      User.hasMany(models.Product);
     }
   };
   User.init({
     username: {
-      type: DataTypes.STRING,
+      type : DataTypes.STRING,
       validate : {
         notEmpty : {
-          message : "Username must be filled! :)"
-        }
-      }
-    },
-    email: {
-      type: DataTypes.STRING,
-      validate : {
-        notEmpty : {
-          message : "Email must be filled! :)"
+          msg : "Username must be filled thanks."
         },
         isEmail : {
-          message : "Must Email format!"
-        },
-      },
-      unique : true
-    },
-    password: {
-      type: DataTypes.STRING,
-      validate : {
-        notEmpty : {
-          message : "Username must be filled! :)"
+          msg : "Username must be email format."
         }
       }
-    },  
+    },
+    password: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : "Pwd must be filled thanks."
+        }
+      }
+    },
   }, {
+    hooks : {
+      beforeCreate(user){
+        user.password = encryptPwd(user.password)
+      }
+    },
     sequelize,
     modelName: 'User',
   });
-  User.beforeCreate((user) => {
-    
-  })
   return User;
 };
