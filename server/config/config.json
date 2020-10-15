@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "admin",
-    "database": "product_cms",
+    "database": "fruit_CMS",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
@@ -14,10 +14,10 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "isijkkxecfbwmw",
-    "password": "793623626a367531bf5e2bf5b1af48ffe881dddeffb52a79e0054dedb2a3c5f2",
-    "database": "d5t25888s8udrh",
-    "host": "ec2-54-158-222-248.compute-1.amazonaws.com",
+    "username": "postgres",
+    "password": "admin",
+    "database": "fruit_CMS",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   }
 }
