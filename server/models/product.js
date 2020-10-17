@@ -31,15 +31,12 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    image: {
+    category: {
       type : DataTypes.STRING,
       validate : {
         notEmpty : {
-          msg : "Product image must be filled ."
-        },
-        // isUrl : {
-        //   msg : "Product image must be URL format thanks."
-        // }
+          msg : "Product catg must be filled ."
+        }
       }
     },
     price: {
@@ -62,6 +59,17 @@ module.exports = (sequelize, DataTypes) => {
         isNumeric : {
           msg : "Stock must be a number."
         }
+      }
+    },
+    image: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : "Product image must be filled ."
+        },
+        // isUrl : {
+        //   msg : "Product image must be URL format thanks."
+        // }
       }
     },
     UserId: DataTypes.INTEGER

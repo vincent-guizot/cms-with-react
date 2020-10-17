@@ -50,14 +50,6 @@ module.exports = (sequelize, DataTypes) => {
         },
       }
     },
-    ShipperId: {
-      type: DataTypes.INTEGER,
-      validate : {
-        notEmpty : {
-          message : "ShipperId must be filled! :)"
-        },
-      }
-    },
     InvoiceId : {
       type : DataTypes.INTEGER
     }

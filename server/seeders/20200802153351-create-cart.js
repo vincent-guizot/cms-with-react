@@ -8,16 +8,22 @@ module.exports = {
       ProductId: 1,
       CustomerId: 1,
       quantity: 3,
+      createdAt: new Date(),
+      updatedAt: new Date()  
     },
     {
       ProductId: 2,
       CustomerId: 1,
       quantity: 2,
+      createdAt: new Date(),
+      updatedAt: new Date()  
     },
     {
       ProductId: 3,
       CustomerId: 1,
-      quantity: 5,
+      quantity: 2,
+      createdAt: new Date(),
+      updatedAt: new Date()  
     },
     ], {});
   },
