@@ -20,9 +20,6 @@ module.exports = {
       subtotal: {
         type: Sequelize.INTEGER
       },
-      ShipperId : {
-        type : Sequelize.INTEGER
-      },
       InvoiceId : {
         type : Sequelize.INTEGER
       },
