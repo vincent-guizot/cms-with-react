@@ -48,11 +48,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
   }, {
+    hooks: {
+      beforeCreate(){}
+    },
     sequelize,
     modelName: 'Customer',
   });
-  Customer.beforeCreate((user) => {
-
-  })
   return Customer;
 };

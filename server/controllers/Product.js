@@ -21,14 +21,14 @@ class ProductController {
     }
 
     static async addProduct(req, res, next) {
-        const { name, info, img, price, stock } = req.body;
+        const { name, info, category, price, stock } = req.body;
         //Menerima dari Middlewares authentication
         const UserId = req.userData.id
         //Multer
         const image = req.file.path;
         try {
             const product = await Product.create({
-                name, info, image, price, stock, UserId
+                name, info, category, image, price, stock, UserId
             })
 
             res.status(201).json(product)
@@ -58,7 +58,21 @@ class ProductController {
     }
 
     static async updateProduct(req, res) {
+        const { name, info, category, price, stock } = req.body;
+        const id = req.params.id
+        //Menerima dari Middlewares authentication
+        const UserId = req.userData.id
+        //Multer
+        const image = req.file.path;
+        try {
+            const product = await Product.update({
+                name, info, category, image, price, stock, UserId
+            }, {
+                where : {id}
+            })
 
+            res.status(201).json(product)
+        } catch (err) {}
     }
 }
 
