@@ -43,11 +43,11 @@ class UserController {
         }
     }
     static async register(req, res, next) {
-        const { username, password } = req.body;
+        const { username,email, password } = req.body;
         try {
             const found = await User.findOne({
                 where: {
-                    username
+                    username,email
                 }
             })
             if (found) {
@@ -56,7 +56,7 @@ class UserController {
                 }
             } else {
                 const user = await User.create({
-                    username, password
+                    username,email, password
                 })
                 res.status(201).json(user);
             }
