@@ -58,7 +58,21 @@ class ProductController {
     }
 
     static async updateProduct(req, res) {
+        const { name, info, category, price, stock } = req.body;
+        const id = req.params.id
+        //Menerima dari Middlewares authentication
+        const UserId = req.userData.id
+        //Multer
+        const image = req.file.path;
+        try {
+            const product = await Product.update({
+                name, info, category, image, price, stock, UserId
+            }, {
+                where : {id}
+            })
 
+            res.status(201).json(product)
+        } catch (err) {}
     }
 }
 
