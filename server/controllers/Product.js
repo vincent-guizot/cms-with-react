@@ -30,7 +30,7 @@ class ProductController {
             const product = await Product.create({
                 name, info, category, image, price, stock, UserId
             })
-
+            
             res.status(201).json(product)
         } catch (err) {
             // res.status(500).json(err)
