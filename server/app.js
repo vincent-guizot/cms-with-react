@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config()
 
-const PORT = Number(process.env.PORT) || 4000;
+// const PORT = Number(process.env.PORT) || 4000;
 
 const errorHandling = require('./middlewares/errorHandling')
 const router = require('./routes')
@@ -19,6 +19,6 @@ app.use(cors())
 app.use(router);
 app.use(errorHandling);
 
-app.listen(PORT, () => {
-    console.log(`Server is running at port : ${PORT}`);
-})
+//Migrate listen to bin/www
+
+module.exports= app;

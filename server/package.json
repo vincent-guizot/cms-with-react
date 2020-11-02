@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon bin/www",
+    "set_test" : "$env:NODE_ENV='test'",
+    "create_migrate" : "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "test": "jest --detectOpenHandles  --forceExit --coverage"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +17,6 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jest": "^26.5.0",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.2",
     "pg": "^8.3.3",
@@ -23,7 +24,9 @@
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
+    "jest": "^26.6.1",
     "nodemon": "^2.0.5",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "supertest": "^6.0.0"
   }
 }
