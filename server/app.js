@@ -19,6 +19,9 @@ app.use(cors())
 app.use(router);
 app.use(errorHandling);
 
-//Migrate listen to bin/www
+//Migrate listen to bin//www
+// app.listen(PORT, () => {
+//     console.log("App is running at : ", PORT)
+// })
 
 module.exports= app;

@@ -39,15 +39,18 @@ class UserController {
             }
 
         } catch (err) {
-            next(err)
+            // next(err)
+            res.status(500).json({
+                msg: "Server error"
+            })
         }
     }
     static async register(req, res, next) {
-        const { username,email, password } = req.body;
+        const { username, email, password } = req.body;
         try {
             const found = await User.findOne({
                 where: {
-                    username,email
+                    username, email
                 }
             })
             if (found) {
@@ -56,7 +59,7 @@ class UserController {
                 }
             } else {
                 const user = await User.create({
-                    username,email, password
+                    username, email, password
                 })
                 res.status(201).json(user);
             }

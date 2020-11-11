@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon bin/www",
-    "set_test" : "$env:NODE_ENV='test'",
     "create_migrate" : "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
-    "test": "jest --detectOpenHandles  --forceExit --coverage"
+    "test": "jest --detectOpenHandles  --forceExit --watchAll"
   },
   "keywords": [],
   "author": "",
